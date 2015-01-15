@@ -77,7 +77,7 @@ router.route('/queues/:id')
 	})
 	.delete(function (req, res) {
 		res.json({
-			'delete queue by id'
+			message: 'delete queue by id'
 		});
 	});
 
