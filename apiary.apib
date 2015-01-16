@@ -1,46 +1,73 @@
 FORMAT: 1A
 
 # tardis-api
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+API for [tardis](http://github.com/kiplic/tardis). Built with express, redis, and mongo.
 
-# Group Notes
-Notes related resources of the **Notes API**
-
-## Notes Collection [/notes]
-### List all Notes [GET]
+## Courses Collection [/notes]
+### List all Courses [GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "Jogging in park"
+          "id": 1, "name": "CS 1110", "description": "Introduction to Programming"
         }, {
-          "id": 2, "title": "Pick-up posters from post-office"
+          "id": 2, "name": "CS 2110", "description": "Software Development Methods"
         }]
 
-### Create a Note [POST]
+### Create a Course [POST]
 + Request (application/json)
 
-        { "title": "Buy cheese and bread for breakfast." }
+        { "name": "CS 1110", "description": "Introduction to Programming" }
 
 + Response 201 (application/json)
 
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+        { "id": 1, "name": "CS 1110", "description": "Introduction to Programming" }
 
-## Note [/notes/{id}]
-A single Note object with all its details
+## Course [/courses/{id}]
+A single Course object with all its details
 
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+    + id (required, number, `1`) ... Numeric `id` of the Course to perform action with. Has example value.
 
-### Retrieve a Note [GET]
+### Retrieve a Course [GET]
 + Response 200 (application/json)
 
-    + Header
+        { "id": 1, "name": "CS 1110", "description": "Introduction to Programming" }
 
-            X-My-Header: The Value
-
-    + Body
-
-            { "id": 2, "title": "Pick-up posters from post-office" }
-
-### Remove a Note [DELETE]
+### Remove a Course [DELETE]
 + Response 204
+
+
+## Queues by Course Collection [/courses/{id}/queues]
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Course to perform action with. Has example value.
+    
+### List all Queues by Course [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "name": "CS 1110", "description": "Introduction to Programming"
+        }, {
+          "id": 2, "name": "CS 2110", "description": "Software Development Methods"
+        }]
+        
+### Create a Queue for a Course [POST]
++ Request (application/json)
+
+        { "name": "Wednesday Night Office Hours" }
+
++ Response 201 (application/json)
+
+        { "id" : "1", "name": "Wednesday Night Office Hours" }
+        
+## Queues Collection [/queues]
+
+### List all Queues [GET]
+
++ Response 200 (application/json)
+
+        [{ 
+            "id" : "1", "name": "Wednesday Night Office Hours"
+        }, {
+            "id" : "2", "name": "Thursday Night Office Hours"
+        }]
