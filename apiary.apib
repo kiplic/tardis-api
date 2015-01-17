@@ -25,6 +25,8 @@ API for [tardis](http://github.com/kiplic/tardis). Built with express, redis, an
         { "id": "dgm3df", "name": "Dan Miller" }
         
 ## User [/users/{id}]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
 ### Update a User [PUT]
 
 + Request (application/json)
@@ -37,14 +39,14 @@ API for [tardis](http://github.com/kiplic/tardis). Built with express, redis, an
 
 + Response 204
 
-## Courses Collection [/notes]
+## Courses Collection [/courses]
 ### List all Courses [GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, "name": "CS 1110", "description": "Introduction to Programming"
+          "id": 1, "dept": "CS", num: "1110", "description": "Introduction to Programming"
         }, {
-          "id": 2, "name": "CS 2110", "description": "Software Development Methods"
+          "id": 2, "dept": "CS", num: "2110", "description": "Software Development Methods"
         }]
 
 ### Create a Course [POST]
@@ -106,6 +108,8 @@ API for [tardis](http://github.com/kiplic/tardis). Built with express, redis, an
         }]
         
 ## Queue [/queue/{id}]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Queue to perform action with. Has example value.
 
 ### Retrieve a Queue [GET]
 
