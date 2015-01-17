@@ -70,3 +70,25 @@ API for [tardis](http://github.com/kiplic/tardis). Built with express, redis, an
         }, {
             "id" : "2", "name": "Thursday Night Office Hours"
         }]
+        
+## Queue [/queue/{id}]
+
+### Retrieve a Queue [GET]
+
++ Response 200 (application/json)
+
+        { "id" : "1", "name": "Wednesday Night Office Hours" }
+
+### Update a queue [PATCH]
+
++ Request (application/json)
+
+        { "op" : "pop" } or
+        { "op" : "push", "id" : "dgm3df" } or
+        { "op" : "remove", "id" : "dgm3df" } or
+
++ Response 204
+
+### Delete a queue [DELETE]
+
++ Response 204
