@@ -41,7 +41,7 @@ module.exports = function (router) {
 
 		.post(function (req, res) {
 			res.json({
-				message: 'create queue for course id: ' + req.params.id + ' with body: ' + req.body;
+				message: 'create queue for course id: ' + req.params.id + ' with body: ' + req.body
 			});
 		});
 };
