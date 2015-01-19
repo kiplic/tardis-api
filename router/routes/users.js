@@ -19,7 +19,7 @@ module.exports = function (router) {
 			});
 		})
 
-		.put(function (req, res) {
+		.patch(function (req, res) {
 			res.json({
 				message: 'update user with id: ' + req.params.id
 			});
