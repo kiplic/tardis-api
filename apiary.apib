@@ -4,25 +4,26 @@ FORMAT: 1A
 API for [tardis](http://github.com/kiplic/tardis). Built with express, redis, and mongo.
 
 ## Users Collection [/users]
+Role will be one of "instructor", "ta", "student"
 ### List all Users [GET]
 
 + Response 200 (application/json)
 
         [{
-            "id": "dgm3df", "name": "Dan Miller"
+            "id": "dgm3df", "name": "Dan Miller", "role": "ta"
         }, {
-            "id": "hwc2d", "name": "Hunter Cassidy"
+            "id": "hwc2d", "name": "Hunter Cassidy", "role": "ta"
         }]
         
 ### Create a User [POST]
 
 + Request (application/json)
 
-        { "id": "dgm3df", "name": "Dan Miller" }
+        { "id": "dgm3df", "name": "Dan Miller", "role": "ta" }
         
 + Response 201 (application/json)
 
-        { "id": "dgm3df", "name": "Dan Miller" }
+        { "id": "dgm3df", "name": "Dan Miller", "role": "ta" }
         
 ## User [/users/{id}]
 + Parameters
@@ -32,13 +33,13 @@ API for [tardis](http://github.com/kiplic/tardis). Built with express, redis, an
 
 + Response 200 (application/json)
 
-        { "id": "dgm3df", "name": "Dan Miller" }
+        { "id": "dgm3df", "name": "Dan Miller", "role": "ta" }
 
 ### Update a User [PUT]
 
 + Request (application/json)
 
-        { "id": "dgm3df", "name": "Dan Miller" }
+        { "id": "dgm3df", "name": "Dan Miller", "role": "ta" }
         
 + Response 204
 
