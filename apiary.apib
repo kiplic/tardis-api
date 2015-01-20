@@ -10,20 +10,20 @@ Role will be one of "instructor", "ta", "student"
 + Response 200 (application/json)
 
         [{
-            "id": "dgm3df", "name": "Dan Miller", "role": "ta"
+            "id": "dgm3df", "first_name": "Daniel", "last_name": "Miller", "role": "ta"
         }, {
-            "id": "hwc2d", "name": "Hunter Cassidy", "role": "ta"
+            "id": "hwc2d", "first_name": "Hunter", "last_name": "Cassidy", "role": "ta"
         }]
         
 ### Create a User [POST]
 
 + Request (application/json)
 
-        { "id": "dgm3df", "name": "Dan Miller", "role": "ta" }
+        {"id": "dgm3df", "first_name": "Daniel", "last_name": "Miller", "role": "ta"}
         
 + Response 201 (application/json)
 
-        { "id": "dgm3df", "name": "Dan Miller", "role": "ta" }
+        {"id": "dgm3df", "first_name": "Daniel", "last_name": "Miller", "role": "ta"}
         
 ## User [/users/{id}]
 + Parameters
@@ -33,13 +33,13 @@ Role will be one of "instructor", "ta", "student"
 
 + Response 200 (application/json)
 
-        { "id": "dgm3df", "name": "Dan Miller", "role": "ta" }
+        {"id": "dgm3df", "first_name": "Daniel", "last_name": "Miller", "role": "ta"}
 
 ### Update a User [PUT]
 
 + Request (application/json)
 
-        { "id": "dgm3df", "name": "Dan Miller", "role": "ta" }
+        {"id": "dgm3df", "first_name": "Daniel", "last_name": "Miller", "role": "ta"}
         
 + Response 204
 
