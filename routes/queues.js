@@ -1,11 +1,11 @@
 module.exports = function (router) {
-	router.get('/queues', function (req, res) {
+	router.get('/', function (req, res) {
 		res.json({
 			message: 'list all queues'
 		});
 	});
 
-	router.route('/queues/:id')
+	router.route('/:id')
 		.get(function (req, res) {
 			res.json({
 				message: 'get queue with id: ' + req.params.id
