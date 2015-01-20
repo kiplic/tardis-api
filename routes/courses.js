@@ -1,5 +1,5 @@
 module.exports = function (router) {
-	router.route('/courses')
+	router.route('/')
 		.get(function (req, res) {
 			res.json({
 				message: 'get all courses'
@@ -12,7 +12,7 @@ module.exports = function (router) {
 			});
 		});
 
-	router.route('/courses/:id')
+	router.route('/:id')
 		.get(function (req, res) {
 			res.json({
 				message: 'get course with id: ' + req.params.id
@@ -32,7 +32,7 @@ module.exports = function (router) {
 		});
 
 	// course queues
-	router.route('/courses/:id/queues')
+	router.route('/:id/queues')
 		.get(function (req, res) {
 			res.json({
 				message: 'get all queues for course id: ' + req.params.id

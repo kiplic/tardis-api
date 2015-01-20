@@ -1,5 +1,5 @@
 module.exports = function (router) {
-	router.route('/users')
+	router.route('/')
 		.get(function (req, res) {
 			res.json({
 				message: 'get all users'
@@ -12,7 +12,7 @@ module.exports = function (router) {
 			});
 		});
 
-	router.route('/users/:id')
+	router.route('/:id')
 		.get(function (req, res) {
 			res.json({
 				message: 'get user with id: ' + req.params.id
