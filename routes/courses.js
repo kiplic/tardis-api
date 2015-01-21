@@ -1,7 +1,7 @@
 var Course = require('../../models/course');
 
 module.exports = function (router) {
-	router.route('/courses')
+	router.route('/')
 		.get(function (req, res) {
             Course.find(function (err, courses) {
                 if (err) res.send(err);
@@ -24,7 +24,7 @@ module.exports = function (router) {
             });
 		});
 
-	router.route('/courses/:course_id')
+	router.route('/:course_id')
 		.get(function (req, res) {
             Course.findById(req.params.course_id, function (err, course) {
                 if (err) res.send(err);
@@ -64,17 +64,38 @@ module.exports = function (router) {
             });
 		});
 
+		
+
 	// course queues
-	router.route('/courses/:course_id/queues')
+	router.route('/:course_id/queues')
 		.get(function (req, res) {
 			res.json({
-				message: 'get all queues for course id: ' + req.params.id
+				message: 'get all queues for course id: ' + req.params.course_id
 			});
 		})
 
 		.post(function (req, res) {
 			res.json({
-				message: 'create queue for course id: ' + req.params.id + ' with body: ' + JSON.stringify(req.body)
+				message: 'create queue for course id: ' + req.params.course_id + ' with body: ' + JSON.stringify(req.body)
+			});
+		});
+
+	router.route('/:course_id/queues/:queue_id')
+		.get(function (req, res) {
+			res.json({
+				message: 'get queue with id: ' + req.params.queue_id
+			});
+		})
+
+		.patch(function (req, res) {
+			res.json({
+				message: 'update queue with id: ' + req.params.queue_id
+			});
+		})
+
+		.delete(function (req, res) {
+			res.json({
+				message: 'delete queue with id: ' + req.params.queue_id
 			});
 		});
 };
