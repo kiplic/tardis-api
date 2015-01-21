@@ -1,4 +1,4 @@
-var Course = require('../../models/course');
+var Course = require('../models/course');
 
 module.exports = function (router) {
 	router.route('/')
@@ -18,6 +18,8 @@ module.exports = function (router) {
             course.title = req.body.title;
             
             course.save(function (err) {
+                if (err) res.send(err);
+
                 res.json({
                     message: 'new course created with data: ' + JSON.stringify(req.body)
                 });
