@@ -16,6 +16,8 @@ module.exports = function (router) {
             course.dept = req.body.dept;
             course.num = req.body.num;
             course.title = req.body.title;
+            course.semester = req.body.semester;
+            course.year = req.body.semester;
             
             course.save(function (err) {
                 if (err) res.send(err);
