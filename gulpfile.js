@@ -10,12 +10,12 @@ gulp.task('lint', function () {
 	return gulp.src(['./**/*.js', '!./node_modules/**'])
 		.pipe(jshint())
 		.pipe(jshint.reporter('jshint-stylish'))
-  	.pipe(jshint.reporter('fail'))
+  		.pipe(jshint.reporter('fail'));
 });
 
 gulp.task('dev', function () {
 	nodeman({ script: 'server.js', ext: 'html js' })
-		.on('change', ['lint'])
+		.on('change', ['lint']);
 });
 
 gulp.task('default', ['lint', 'dev']);
