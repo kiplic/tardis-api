@@ -2,6 +2,7 @@ var express = require('express');
 var enrouten = require('express-enrouten');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var redis = require('redis');
 
 var app = express();
 
@@ -12,6 +13,11 @@ var port = process.env.PORT || 3000;
 
 var config = require('./config');
 mongoose.connect(config.mongo.uri);
+
+var redisClient = redis.createClient();
+redisClient.on("error", function (err) {
+	console.log("REDIS: ERROR: " + err);
+});
 
 var router = enrouten({ directory: 'routes' }); 
 
