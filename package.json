@@ -29,6 +29,7 @@
     "gulp": "^3.8.10",
     "gulp-ignore": "^1.2.1",
     "gulp-jshint": "^1.9.0",
-    "gulp-nodemon": "^1.0.5"
+    "gulp-nodemon": "^1.0.5",
+    "jshint-stylish": "^1.0.0"
   }
 }
