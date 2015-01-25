@@ -173,10 +173,14 @@ module.exports = function (router) {
 		})
 
 		.delete(function (req, res) {
+            // we probably don't want to actually delete these, right?
+            // flip a flag instead?
             Queue.remove({
                 _id: req.params.queue_id
             }, function (err, queue) {
                 if (err) res.send(err);
+
+                // need to DEL both the order and data queues from redis
 
                 res.json(queue);  
             });
